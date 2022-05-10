@@ -1,6 +1,5 @@
 const express = require('express');
 const mysql = require('mysql');
-const router = express.Router();
 const connection = require('../db');
 const { detectLanguage, translateText, } = require("../utils/translateFunctions.js");
 const { LANGUAGE_ISO_CODE } = require("../utils/dictionaries.js");
@@ -10,6 +9,8 @@ const buildInsertQueryString = (senderName, senderMail, senderCountry, receiverC
     const queryString = `INSERT INTO messages2 (senderName, senderMail, senderCountry, receiverCountry, receiverMail, messageContent) values (${mysql.escape(senderName)}, ${mysql.escape(senderMail)}, ${mysql.escape(senderCountry)}, ${mysql.escape( receiverCountry)}, ${mysql.escape(receiverMail)}, ${mysql.escape(messageContent)})`;
     return queryString;
 };
+
+const router = express.Router();
 
 // Get all messages
 router.get("/", (req, res) => {
