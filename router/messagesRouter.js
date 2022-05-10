@@ -130,31 +130,33 @@ router.post("/foreign", async (req, res) => {
     let translationData = {};
 
     const queryString = buildInsertQueryString(senderName, senderMail,senderCountry, receiverCountry, receiverMail, messageContent);
-
+    console.log("1")
     try {
         //for all languages
         if (language === "ALL") {
             const originalLanguageResponse = await detectLanguage(messageContent);
             translationData.originalLanguage = originalLanguageResponse[0]?.language;
             const availableLanguages = Object.values(LANGUAGE_ISO_CODE);
-
+            console.log("2")
             const translatedAnswersArray = await Promise.all(
                 availableLanguages.map(async (language) => {
                     const translatedTextResponse = await translateText(messageContent, language);
                     return translatedTextResponse[0];
                 })
             );
+            console.log("3")
             translationData.translatedText = translatedAnswersArray.reduce(
                 (acc, curr) => {
                     return acc + curr + "\n";
                 },
                 ""
             );
+            console.log("4")
         }
         else if (LANGUAGE_ISO_CODE[language]) {
             const originalLanguageResponse = await detectLanguage(messageContent);
             translationData.originalLanguage = originalLanguageResponse[0]?.language;
-
+            console.log("5")
             const translatedTextResponse = await translateText(
                 messageContent,
                 LANGUAGE_ISO_CODE[language]
@@ -164,7 +166,7 @@ router.post("/foreign", async (req, res) => {
         else {
             return res.send("Language not supported");
         }
-
+        console.log("6")
         //send with sendgrid
         sendMail(
             receiverMail,
@@ -172,7 +174,7 @@ router.post("/foreign", async (req, res) => {
             senderName + "" + " sent you a message",
             translationData.translatedText
         );
-
+        console.log("7")
         // insert orginal message in database
         connection.query(queryString, (err, results) => {
             if (err) {
@@ -185,7 +187,7 @@ router.post("/foreign", async (req, res) => {
         });
     } catch (err) {
         console.log(err);
-        return res.send("Something went wrong");
+        return res.send("Something went wrong!");
     }
 });
 
