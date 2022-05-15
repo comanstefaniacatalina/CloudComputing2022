@@ -24,7 +24,7 @@ Aplicația web o sa aiba scopul de a permite utilizatorilor sa trimită mesaje, 
 
 3. Descriere API:
 
-Cloud Storage: Obiectivul Cloud Storage este acela de a oferii capacitate de stocare pentru companiile care își doresc acest lucru, iar Google Cloud se asigura ca prin intermediul serviciilor lor vor beneficia de opțiuni multiple de redundanță și stocare de arhivă care pot fi folosite efectiv. Pentru proiect am folosit Cloud SQL, crearea acestui database relational a fost foarte rapid, doar prin intermediul consolei, la fel și pentru configurarea setărilor de networking pentru aceasta.
+Cloud Storage: Obiectivul Cloud Storage este acela de a oferi capacitate de stocare pentru companiile care își doresc acest lucru, iar Google Cloud se asigura ca prin intermediul serviciilor lor vor beneficia de opțiuni multiple de redundanță și stocare de arhivă care pot fi folosite efectiv. Pentru proiect am folosit Cloud SQL, crearea acestui database relational a fost foarte rapid, doar prin intermediul consolei, la fel și pentru configurarea setărilor de networking pentru aceasta.
 
 Publicarea aplicației: Publicarea aplicației se face cu ajutorul Heroku care este un PaaS, oferind un suport pentru mai multe limbaje de programare. Astfel prin publicarea repository-urilor din git-ul nostru pe Heroku, acestea vor putea mai apoi sa fie “pornite”, atat backend-ul și frontend-ul, iar prin integrarea corecta a acestora, după pornirea frontend-ului aplicația va putea sa fie folosită de oricine isi doreste.
 	
