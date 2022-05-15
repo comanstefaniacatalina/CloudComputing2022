@@ -1,4 +1,8 @@
 # CloudComputing2022
+# Documentația proiectului de Cloud computing 
+# COMAN STEFANIA CATALINA 
+# GRUPA 1117
+
 
 Link-ul către clipul video pentru descrierea proiectului: https://youtu.be/oNHlmo6_d_A 
 
