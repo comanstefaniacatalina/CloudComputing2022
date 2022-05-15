@@ -46,7 +46,7 @@ Query are un strig și un callback, se apelează query string și se executa un 
 Metoda GET este folosite pentru a selecta un mesaj din cele trimise sau pentru a selecta toate mesajele pe care noi le trimitem. Alături de metoda GET, am folosit și metoda POST, care realizeaza insertul în cadrul bazei de date. Așadar, am inserat un mesaj cu “senderName, senderMail, senderCountry, receiverCountry, receiverMail, messageContent”. În aceeași modalitate am folosit și o metoda de ștergere a unui anumit mesaj prin folosirea metodei HTTP DELETE. Metoda PUT a fost folosită pentru a face update pe un mesaj care a fost deja creat.
 Toate metodele amintite mai sus au fost testate prin intermediul POSTMAN, după ce am creat o colecție pentru a face procesul mult mai eficient.
 
-
+![6](https://user-images.githubusercontent.com/72125746/168474624-384dd08f-805b-4fbb-bdde-8d2b233b7be6.png)
 
 Autentificare și autorizare servicii utilizate: A fost nevoie de  autentificare pentru deschiderea conturilor necesare pentru obținerea API-urilor, dar și un cont pentru folosirea Cloud Storage-ului.
 
